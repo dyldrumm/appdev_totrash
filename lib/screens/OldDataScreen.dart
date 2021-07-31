@@ -16,6 +16,7 @@ class OldDataScreen extends StatefulWidget {
 
 class _OldDataScreenState extends State<OldDataScreen> {
   DateFormat finalDate = new DateFormat();
+  final formkey = GlobalKey<DateTextFormFieldState>();
   var datecontroller = new MaskedTextController(mask: '00/00/0000');
   TextEditingController dateText = new TextEditingController();
   String testDate = "";
@@ -144,47 +145,47 @@ class _OldDataScreenState extends State<OldDataScreen> {
                                   width: w * 0.04,
                                 ),
                                 Padding(
-                                  padding: EdgeInsets.only(
-                                      top: h * 0.02, right: w * 0.02),
-                                  child: Container(
+                                    padding: EdgeInsets.only(
+                                        top: h * 0.02, right: w * 0.02),
+                                    child: Container(
                                       width: w * 0.5,
-                                      child: DateTextFormField(
-                                        onValidate: (date) {
-                                          Common.dateFormat = date;
-                                        },
-                                        validator: (date) {
-                                          return true;
-                                        },
-                                        dateFormat: 'mm/dd/yyyy',
-                                        showDatePicker: false,
-                                        labelFail: "Invalid date",
-                                        decoration: InputDecoration(),
-                                      )
-
-                                      // TextField(
-                                      //   decoration: InputDecoration(
-                                      //     enabledBorder: OutlineInputBorder(
-                                      //         borderSide: BorderSide.none),
-                                      //     hintText: "mm/dd/yyyy",
-                                      //     hintStyle: TextStyle(
-                                      //       fontSize: w * 0.05,
-                                      //       color: Color(0xFFA4A4A4),
-                                      //     ),
-                                      //   ),
-                                      // ),
-
-                                      // DateTextFormField(
-                                      //   onValidate: (date) {},
-                                      //   validator: (date) {
-                                      //     return true;
-                                      //   },
-                                      //   dateFormat: 'mm/dd/yyyy',
-                                      //   showDatePicker: false,
-                                      //   labelFail: "Invalid date",
-                                      //   decoration: InputDecoration(),
-                                      // )
+                                      child: TextField(
+                                        controller: dateText,
+                                        decoration: InputDecoration(
+                                          enabledBorder: OutlineInputBorder(
+                                              borderSide: BorderSide.none),
+                                          hintText: "yyyy-mm-dd",
+                                          hintStyle: TextStyle(
+                                            fontSize: w * 0.05,
+                                            color: Color(0xFFA4A4A4),
+                                          ),
+                                        ),
                                       ),
-                                ),
+                                    )
+
+                                    // TextField(
+                                    //   decoration: InputDecoration(
+                                    //     enabledBorder: OutlineInputBorder(
+                                    //         borderSide: BorderSide.none),
+                                    //     hintText: "mm/dd/yyyy",
+                                    //     hintStyle: TextStyle(
+                                    //       fontSize: w * 0.05,
+                                    //       color: Color(0xFFA4A4A4),
+                                    //     ),
+                                    //   ),
+                                    // ),
+
+                                    // DateTextFormField(
+                                    //   onValidate: (date) {},
+                                    //   validator: (date) {
+                                    //     return true;
+                                    //   },
+                                    //   dateFormat: 'mm/dd/yyyy',
+                                    //   showDatePicker: false,
+                                    //   labelFail: "Invalid date",
+                                    //   decoration: InputDecoration(),
+                                    // )
+                                    ),
                                 GestureDetector(
                                     onTap: () {
                                       Navigator.push(
@@ -228,8 +229,7 @@ class _OldDataScreenState extends State<OldDataScreen> {
                       child: Center(
                         child: GestureDetector(
                             onTap: () {
-                              print(testDate);
-                              Common.additem(name.text, dateText.text);
+                              Common.dateTemp = dateText.text;
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(

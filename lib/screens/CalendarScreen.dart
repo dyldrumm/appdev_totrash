@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 import 'package:totrash/helpers/common.dart';
 import 'package:totrash/objs/items.dart';
@@ -40,10 +41,17 @@ List<Appointment> getAppointments() {
       startTime: startTime,
       endTime: endTime,
       subject: 'Milk Expires today',
-      color: Colors.red,
+      color: Colors.blue[100],
       isAllDay: true));
 
-  meeting.add(Appointment());
+  print("add appt");
+  meeting.add(Appointment(
+    startTime: DateTime.parse(Common.dateTemp),
+    endTime: DateTime.parse(Common.dateTemp),
+    subject: Common.tempName + "expiration",
+    color: Colors.blue[100],
+    isAllDay: true,
+  ));
 
   return meeting;
 }

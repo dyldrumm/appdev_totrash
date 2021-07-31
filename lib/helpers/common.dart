@@ -3,6 +3,7 @@ import 'package:totrash/objs/items.dart';
 
 class Common {
   static DateTime dateFormat = new DateTime(0);
+  static String tempName = "";
   static final String assetImages = "assets/images/";
   static String barcodeTemp = "";
   static String dateTemp = "";
@@ -10,9 +11,14 @@ class Common {
   static List<Items> items = [];
 
   static additem(String name, String date) {
+    print("additem");
     print(date);
     List<int> dates = standardizeDate(date);
     items.add(Items(name, dates[0], dates[1], dates[2]));
+  }
+
+  static tempAddItem(String name, DateTime date) {
+    print("newadditem");
   }
 
   static additemCamera(String name, String date) {
@@ -44,6 +50,7 @@ class Common {
   }
 
   static List<int> standardizeDate(String date) {
+    print("standardize");
     String temp = date.substring(0, 2);
     int mon = int.parse(temp);
     temp = date.substring(3, 5);
@@ -52,6 +59,9 @@ class Common {
     int year = int.parse(temp);
     List<int> ret = [year, mon, day];
 
+    print("standardize done");
     return ret;
   }
+
+  static toDateTime() {}
 }

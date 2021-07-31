@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "57808550540",
+    "project_id": "totrash-007",
+    "storage_bucket": "totrash-007.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:57808550540:android:f2e2aa891f03737a2999a9",
+        "android_client_info": {
+          "package_name": "com.example.totrash"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "57808550540-u2jkrvg5m73bcnp578n7crdhe0dhcms8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9fJqVBexjiOVAC82j4HnsWpnnr1g0oqU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "57808550540-u2jkrvg5m73bcnp578n7crdhe0dhcms8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "57808550540-b4gh0juq4u6et91erme3c6m5d4rg0ri8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.totrash"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
